@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calendary</title>
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Media -->
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body class="body">
+
+
+    <div class="body__content content">
+
+        <aside class="content__main-aside main-aside">
+            <div class="main-aside__wrapper">
+                <a href="#" class="main-aside__main-logo main-logo">
+                    Логотип
+                </a>
+    
+                <nav class="main-aside__nav-menu nav-menu">
+                    <ul class="nav-menu__alist">
+                        <li class="nav-menu__item active">
+                            <a href="#" class="nav-menu__link">
+                                <svg width="18" height="18" role="img">
+                                    <use xlink:href="./img/sprite.svg#icon-heart"/>
+                                </svg>
+                                Профиль
+                            </a>
+                        </li>
+    
+                        <li class="nav-menu__item">
+                            <a href="#" class="nav-menu__link">
+                                <svg width="18" height="18" role="img">
+                                    <use xlink:href="./img/sprite.svg#icon-stethoscope"/>
+                                </svg>
+                                Врачи и клиники
+                            </a>
+                        </li>
+    
+                        <li class="nav-menu__item">
+                            <a href="#" class="nav-menu__link">
+                                <svg width="18" height="18" role="img">
+                                    <use xlink:href="./img/sprite.svg#icon-message"/>
+                                </svg>
+                                Сообщения
+                            </a>
+                        </li>
+    
+                        <li class="nav-menu__item">
+                            <a href="#" class="nav-menu__link">
+                                <svg width="18" height="18" role="img">
+                                    <use xlink:href="./img/sprite.svg#icon-test"/>
+                                </svg>
+                                Тестирование
+                            </a>
+                        </li>
+    
+                        <li class="nav-menu__item">
+                            <a href="#" class="nav-menu__link">
+                                <svg width="18" height="18" role="img">
+                                    <use xlink:href="./img/sprite.svg#icon-open-book"/>
+                                </svg>
+                                Полезно знать
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+    
+                <a href="#" class="main-aside__main-btn main-btn">
+                    Подать заявку
+                </a>
+            </div>
+            
+
+            <div class="main-aside__footer">
+                <nav class="main-aside__nav-menu nav-menu main-aside__nav-menu--no-gap">
+                    <ul class="nav-menu__alist">
+                        <li class="nav-menu__item">
+                            <a href="#" class="nav-menu__link nav-menu__link--no-gap">
+                                <svg width="18" height="18" role="img">
+                                    <use xlink:href="./img/sprite.svg#icon-information"/>
+                                </svg>
+                                Помощь
+                            </a>
+                        </li>
+
+                        <li class="nav-menu__item">
+                            <a href="https://appvelox.ru/" target="_blank" class="nav-menu__link">
+                                <img    src="img/appvelox.png"
+                                        class="nav-menu__creater"
+                                        alt="appvelox">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            
+        </aside>
+        <div class="content__overflow"></div>
+
+
+
+        <main class="content__main-main main-main">
+            <div class="main-main__container container">
+                <header class="main-main__main-head main-head">
+
+                    <a href="#" class="main-head__burger burger burger-js"></a>
+
+                    <h1 class="main-head__title title">
+                        Мой профиль
+                    </h1>
+
+
+                    <div class="main-head__box-btn">
+                        <ul class="main-head__alist-icons alist-icons">
+                            <li class="alist-icons__item">
+                                <a href="#" class="alist-icons__link">
+                                    <svg width="18" height="18" role="img"> 
+                                        <use xlink:href="img/sprite.svg#icon-magnifier"/>
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <li class="alist-icons__item">
+                                <a href="#" class="alist-icons__link">
+                                    <svg width="18" height="18" role="img"> 
+                                        <use xlink:href="img/sprite.svg#icon-bell"/>
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <li class="alist-icons__item">
+                                <a href="#" class="alist-icons__link">
+                                    <svg width="18" height="18" role="img"> 
+                                        <use xlink:href="img/sprite.svg#icon-eye"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="main-head__avatar-user avatar-user">
+                            <a href="img/avatar.jpg"  data-fancybox="gallery" class="avatar-user__link">
+                                <img    src="img/avatar.jpg" 
+                                        alt="avatar-user"
+                                        class="avatar-user__img-avatar">
+                            </a>
+                        </div>
+
+                        <ul class="main-head__alist-icons alist-icons">
+                            <li class="alist-icons__item">
+                                <a href="#" class="alist-icons__link">
+                                    <svg width="18" height="18" role="img"> 
+                                        <use xlink:href="img/sprite.svg#icon-arrow-down"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                </header>
+
+
+
+                <section class="main-main__reception reception">
+                    <h3 class="reception__title title">
+                        Записи на прием
+                    </h3>
+
+                    <div class="reception__wrapper">
+                        <div class="reception__card-staff card-staff">
+                            <h3 class="card-staff__title title">
+                                Понедельник 15.06.20 | 15:30 
+                            </h3>
+                            <p class="card-staff__paragraph">
+                                СПБ ГБУЗ "Городская поликлиника №25", пр. Солидарности, д. 1, к. 1, лит. А
+                            </p>
+
+                            <div class="card-staff__wrapper">
+                                <div class="card-staff__info-person info-person">
+                                    <a href="img/avatar.jpg"  data-fancybox="gallery" class="info-person__avatar">
+                                        <img    src="img/avatar.jpg"
+                                                class="info-person__img-avatar"
+                                                alt="avatar-doctor">
+                                    </a>
+    
+                                    <div class="info-person__info">
+                                        <p class="info-person__name">
+                                            Малушко Т. Н.
+                                        </p>
+                                        <p class="info-person-post">
+                                            Хирургия
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="card-staff__main-btn main-btn">
+                                    Отменить
+                                </a>
+                            </div>
+                            
+                        </div>
+
+                        <div class="reception__card-staff card-staff">
+                            <h3 class="card-staff__title title">
+                                Понедельник 15.06.20 | 15:30 
+                            </h3>
+                            <p class="card-staff__paragraph">
+                                СПБ ГБУЗ "Городская поликлиника №25", пр. Солидарности, д. 1, к. 1, лит. А
+                            </p>
+
+                            <div class="card-staff__wrapper">
+                                <div class="card-staff__info-person info-person">
+                                    <a href="img/avatar.jpg"  data-fancybox="gallery" class="info-person__avatar">
+                                        <img    src="img/avatar.jpg"
+                                                class="info-person__img-avatar"
+                                                alt="avatar-doctor">
+                                    </a>
+    
+                                    <div class="info-person__info">
+                                        <p class="info-person__name">
+                                            Малушко Т. Н.
+                                        </p>
+                                        <p class="info-person-post">
+                                            Хирургия
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="card-staff__main-btn main-btn">
+                                    Отменить
+                                </a>
+                            </div>
+                            
+                        </div>
+
+                        <a href="#" class="reception__details">
+                                Еще 3 записи
+                                <span>Подробнее</span>
+                        </a>
+                    </div>
+                </section>
+
+
+                <section class="main-main__electronic-card electronic-card">
+                    <h3 class="electronic-card__title title">
+                        Электронная карта
+                    </h3>
+
+                    <div class="electronic-card__wrapper">
+
+                        <a href="#" class="electronic-card__card-info card-info">
+                            <div class="card-info__img">
+                                <svg width="50" height="50" role="img" >
+                                    <use xlink:href="img/sprite.svg#icon-info"/>
+                                </svg>
+                            </div>
+    
+                            <div class="card-info__wrapper">
+                                <h2 class="card-info__title title">
+                                    Информация о пациенте
+                                </h2>
+    
+                                <ul class="card-info__dots-alist dots-alist">
+                                    <li class="dots-alist__item">
+                                        Ваши личные данные
+                                    </li>
+                                    <li class="dots-alist__item">
+                                        Рекомендации врачей
+                                    </li>
+                                    <li class="dots-alist__item">
+                                        История болезней
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
+    
+                        <a href="#" class="electronic-card__card-info card-info">
+                            <div class="card-info__img">
+                                <svg width="50" height="50" role="img" >
+                                    <use xlink:href="img/sprite.svg#icon-lab"/>
+                                </svg>
+                            </div>
+    
+                            <div class="card-info__wrapper">
+                                <h2 class="card-info__title title">
+                                    Результаты анализов
+                                </h2>
+    
+                                <p class="card-info__paragraph">
+                                    Вы можете узнать здесь результаты своих анализов
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="electronic-card__card-info card-info">
+                            <div class="card-info__img">
+                                <svg width="50" height="50" role="img" >
+                                    <use xlink:href="img/sprite.svg#icon-add-info"/>
+                                </svg>
+                            </div>
+    
+                            <div class="card-info__wrapper">
+                                <h2 class="card-info__title title">
+                                    Добавить  информацию
+                                </h2>
+    
+                                <p class="card-info__paragraph">
+                                    Добавляйте в свою электронную медицинскую карту новые данные
+                                </p>
+                            </div>
+                            
+                        </a>
+
+                        <a href="#" class="electronic-card__card-info card-info">
+                            <div class="card-info__img">
+                                <svg width="50" height="50" role="img" >
+                                    <use xlink:href="img/sprite.svg#icon-oclock"/>
+                                </svg>
+                            </div>
+    
+                            <div class="card-info__wrapper">
+                                <h2 class="card-info__title title">
+                                    История приемов
+                                </h2>
+    
+                                <p class="card-info__paragraph">
+                                    Вся информация о полученных услугах за все время хранится здесь
+                                </p>
+                            </div>
+                            
+                        </a>
+                    </div>
+                   
+
+                </section>
+            </div>
+        </main>
+    </div>
+    
+
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
