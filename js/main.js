@@ -113,13 +113,6 @@ $( document ).ready(function() {
     }
 
 
-    
-
-
-
-
-
-
 
     console.log('calendary', calendary)
 });

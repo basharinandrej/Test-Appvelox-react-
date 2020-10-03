@@ -12,6 +12,16 @@
     .reception__details {
         margin: 0 auto;
     }
+
+
+    /* Страница с календарём */
+    .reception__box {
+        flex-direction: column-reverse;
+    }
+    .reception__calendary {
+        margin-left: 0;
+        margin-bottom: 21px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -98,6 +108,17 @@
     }
     .card-staff__info-person {
         margin-bottom: 16px;
+    }
+
+    /* Календарь */
+    .table-days {
+        grid-template-rows: repeat(5, minmax(20px, 69px));
+        grid-template-columns: repeat(7, minmax(20px, 68px));
+    }
+    .reception__calendary {
+        width: auto;
+        height: auto;
+        padding-bottom: 12px;
     }
 }
 
