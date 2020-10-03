@@ -596,6 +596,11 @@ h3.title {
     position: relative;
     padding-left: 8px;
     padding-top: 8px;
+    cursor: pointer;
+}
+
+.table-days p.active {
+    border: 2px solid #50CAFF;
 }
 
 .table-days__count {
