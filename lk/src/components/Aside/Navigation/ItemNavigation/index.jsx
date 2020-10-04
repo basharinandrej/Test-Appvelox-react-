@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 
 const ItemNavigation = ({ links, arrIcons, url, onClick, activeItemMenu }) => {
 
-
     return(
         links && links.map((item, index) => {
             return <li  key={index + item} 
@@ -16,6 +15,7 @@ const ItemNavigation = ({ links, arrIcons, url, onClick, activeItemMenu }) => {
                         }, 'nav-menu__item')}
                         onClick={() => onClick(item.id)}    
                     >
+                        
                 <Link to={url[index]} className="nav-menu__link">
                     {arrIcons[index]}
                     {item.content}

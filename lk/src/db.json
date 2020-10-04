@@ -1,0 +1,48 @@
+{
+    "records": [
+        {
+            "id": 0,
+            "imageUrl": "https://svyatogorsk.com/upload/000/u1/58/c5/4c4619be.jpg",
+            "name": "Малушко Т. Н.",
+            "post": "Хирургия",
+            "date": "Понедельник 15.06.20",
+            "time": "15:30",
+            "address": "пр. Солидарности, д. 1, к. 1, лит. А",
+            "organization": "СПБ ГБУЗ \"Городская поликлиника №25\"",
+            "isArchive": false
+        },
+        {
+            "id": 1,
+            "imageUrl": "https://svyatogorsk.com/upload/000/u1/58/c5/4c4619be.jpg",
+            "name": "Харьков В. С.",
+            "post": "Терапевтическое отделение",
+            "date": "Понедельник 15.06.20",
+            "time": "18:30",
+            "address": "пр. Солидарности, д. 1, к. 1, лит. А",
+            "organization": "СПБ ГБУЗ \"Городская поликлиника №25\"",
+            "isArchive": false
+        },
+        {
+            "id": 2,
+            "imageUrl": "https://svyatogorsk.com/upload/000/u1/58/c5/4c4619be.jpg",
+            "name": "Малушко Т. Н.",
+            "post": "Хирургия",
+            "date": "Вторник 30.06.20",
+            "time": "12:10",
+            "address": "пр. Солидарности, д. 1, к. 1, лит. А",
+            "organization": "СПБ ГБУЗ \"Городская поликлиника №25\"",
+            "isArchive": false
+        },
+        {
+            "id": 3,
+            "imageUrl": "https://svyatogorsk.com/upload/000/u1/58/c5/4c4619be.jpg",
+            "name": "Быков А. Е.",
+            "post": "Терапевтическое отделение",
+            "date": "Понедельник 15.06.20",
+            "time": "15:30",
+            "address": "пр. Солидарности, д. 1, к. 1, лит. А",
+            "organization": "СПБ ГБУЗ \"Городская поликлиника №25\"",
+            "isArchive": false
+        }
+    ]
+}

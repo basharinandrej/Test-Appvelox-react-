@@ -1,6 +1,6 @@
 import React from 'react'
-import img from '../../img/avatar.jpg'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import { Fragment } from 'react'
 import CardStaff from '../../components/CardStaff'
@@ -9,7 +9,7 @@ import CardInfo from '../../components/CardInfo'
 
 
 const MyProfilePage = () => {
-
+    const records = useSelector(({records}) => records.records);
 
 
     return(
@@ -30,8 +30,12 @@ const MyProfilePage = () => {
 
                 <div className="reception__wrapper">
                     
-                    <CardStaff />
-                    <CardStaff />
+                    {   
+                        records && records.map((item, index)=> {
+                            return index < 2 ? <CardStaff key={index} {...item}/> : null
+                        })
+                    }
+                    
 
                     
 

@@ -1,19 +1,31 @@
 import React from 'react';
 import './App.css'
 import {Switch, Route} from 'react-router-dom'
+import {useEffect} from 'react'
+import { useDispatch } from 'react-redux'
+
 
 import Aside from './components/Aside'
 import Header from './components/Header';
 import MyProfile from './pages/MyProfilePage'
 import CalendaryPage from './pages/CalendaryPage'
 import PagePlug from './pages/pagePlug'
+import {fetchRecords} from './redux/actions/records'
 
 
-const App = () => (
 
-	
 
-	<div className="body__content content">
+const App = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchRecords())
+    })
+
+
+
+    return (
+        <div className="body__content content">
 
 		<Aside />
 
@@ -35,9 +47,13 @@ const App = () => (
             </div>
         </main>
 	</div>
+    )
+
+
+	
 
 
 
-)
+}
 
 export default App;

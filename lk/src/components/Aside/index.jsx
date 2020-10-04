@@ -78,7 +78,7 @@ const arrIcons2 = [
 ]
 
 const url = ['/', '/doctors', '/message', 'testing', 'think']
-const url2 = ['/help']
+const url2 = ['/help', '/']
 
 const Aside = () => {
     const [activeItemMenu, setActiveItemMenu] = useState(1)
