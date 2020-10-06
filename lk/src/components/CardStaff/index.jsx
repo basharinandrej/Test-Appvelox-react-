@@ -5,11 +5,14 @@ import src from '../../img/avatar.jpg'
 
 
 
-const CardStaff = ({name, post, date, time, organization, address, imageUrl }) => {
+
+const CardStaff = ({ id, name, post, date, time, organization, address, imageUrl, isArchive, onClick }) => {
+    
 
 
     return(
-        <div className="reception__card-staff card-staff">
+        !isArchive ?
+            <div className="reception__card-staff card-staff">
             <h3 className="card-staff__title title">
                 <b> { date } | { time } </b>   
             </h3>
@@ -37,11 +40,12 @@ const CardStaff = ({name, post, date, time, organization, address, imageUrl }) =
 
                 <Button
                     classElement="card-staff__"
+                    onClick={() => onClick(id)}
                 >
                     Отменить
                 </Button>
             </div>
-        </div>
+        </div> : null
     )
 }
 

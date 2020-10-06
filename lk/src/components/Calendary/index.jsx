@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
+import classNames from "classnames"
 
 
 import WeekDays from './WeekDays'
@@ -20,7 +21,9 @@ const Calendary = () => {
     const dispatch = useDispatch();
     const [currentMonth, toggleMounth] = useState(5)
     const [currentYear, toggleYear] = useState(0)
-    
+    const [cnt, setCnt ] = useState(5)
+
+
     let data = useSelector(({ date }) => date);
        
     
@@ -60,7 +63,7 @@ const Calendary = () => {
     }
 
 
-    
+    let arrColor = ['', '', '', '', 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, '', '', '', '', '', '', ''] 
 
     
     
@@ -78,7 +81,6 @@ const Calendary = () => {
 
 
     const renderDaysHandler = () => {
-        // TODO сократить if'ы
 
         const clnArrFunction = (currentYear, currentMonth) => {
             let clnArr = calendary[currentYear].months[currentMonth].days.filter(el => el != '')
@@ -93,8 +95,17 @@ const Calendary = () => {
 
 
             return clnArr.map((day, index)=> {
-                return <p key={day+index}>
+                return <p   key={day+index} 
+                            onClick={()=> setCnt(index)}
+                            className={classNames({
+                                "table-days__paragraph--background": index === arrColor[index] },
+                                {"active": index  === cnt})}
+                            >
+
+
                             {day}
+
+
                             {
                                 day ? <span className={`table-days__count table-days__count${-sortArr[day]}`}>
                                     { sortArr[day] }
@@ -109,7 +120,12 @@ const Calendary = () => {
             clnArr.unshift('')
 
             return clnArr.map((day, index)=> {
-                return <p key={day + index}>
+                return <p   key={day + index}
+                            onClick={()=> setCnt(index)}
+                            className={classNames({
+                                "table-days__paragraph--background": index === arrColor[index] },
+                                {"active": index  === cnt})}
+                            >
                             {day}  
                             {
                                 day ? <span className={`table-days__count table-days__count${-sortArr[day]}`}>
@@ -127,7 +143,12 @@ const Calendary = () => {
             
 
             return clnArr.map((day, index)=> {
-                return <p key={day+index}>
+                return <p   key={day+index}
+                            onClick={()=> setCnt(index)}
+                            className={classNames({
+                                "table-days__paragraph--background": index === arrColor[index] },
+                                {"active": index  === cnt})}
+                            >
                             {day}
                             {
                                 day ? <span className={`table-days__count table-days__count${-sortArr[day]}`}>
@@ -143,7 +164,12 @@ const Calendary = () => {
             clnArr.unshift('', '', '')
 
             return clnArr.map((day, index)=> {
-                return <p key={day+index}>
+                return <p   key={day+index}
+                            onClick={()=> setCnt(index)}
+                            className={classNames({
+                                "table-days__paragraph--background": index === arrColor[index] },
+                                {"active": index  === cnt})}
+                            >
                             {day}
                             {
                                 day ? <span className={`table-days__count table-days__count${-sortArr[day]}`}>
@@ -159,7 +185,12 @@ const Calendary = () => {
             clnArr.unshift('', '', '', '')
 
             return clnArr.map((day, index)=> {
-                return <p key={day+index}>
+                return <p   key={day+index}
+                            onClick={()=> setCnt(index)}
+                            className={classNames({
+                                "table-days__paragraph--background": index === arrColor[index] },
+                                {"active": index  === cnt})}
+                            >
                             {day}
                             {
                                 day ? <span className={`table-days__count table-days__count${-sortArr[day]}`}>
@@ -177,7 +208,12 @@ const Calendary = () => {
 
 
             return clnArr.map((day, index)=> {
-                return <p key={day+index}>
+                return <p   key={day+index}
+                            onClick={()=> setCnt(index)}
+                            className={classNames({
+                                "table-days__paragraph--background": index === arrColor[index] },
+                                {"active": index  === cnt})}
+                            >
                             {day}
                             {
                                 day ? <span className={`table-days__count table-days__count${-sortArr[day]}`}>
@@ -193,7 +229,12 @@ const Calendary = () => {
             clnArr.unshift('', '', '', '', '', '')
 
             return clnArr.map((day, index)=> {
-                return <p key={day+index}>
+                return <p   key={day+index}
+                            onClick={()=> setCnt(index)}
+                            className={classNames({
+                                "table-days__paragraph--background": index === arrColor[index] },
+                                {"active": index  === cnt})}
+                            >
                             {day}
                             {
                                 day ? <span className={`table-days__count table-days__count${-sortArr[day]}`}>

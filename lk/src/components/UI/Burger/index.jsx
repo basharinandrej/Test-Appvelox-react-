@@ -3,11 +3,14 @@ import React from 'react'
 
 
 
-const Burger = () => {
+const Burger = ({onClick}) => {
 
 
     return(
-        <a href="#" className="main-head__burger burger burger-js"></a>
+        <a  href="#" 
+            onClick={onClick}    
+            className="main-head__burger burger burger-js">
+        </a>
     )
 }
 

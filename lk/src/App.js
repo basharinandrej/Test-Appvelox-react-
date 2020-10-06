@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css'
+import './Appmedia.css'
 import {Switch, Route} from 'react-router-dom'
 import {useEffect} from 'react'
 import { useDispatch } from 'react-redux'
@@ -10,6 +11,7 @@ import Header from './components/Header';
 import MyProfile from './pages/MyProfilePage'
 import CalendaryPage from './pages/CalendaryPage'
 import PagePlug from './pages/pagePlug'
+import Backdrop from './components/UI/Backdrop/Backdrop'
 import { fetchRecords } from './redux/actions/records'
 import { fetchDate } from './redux/actions/dateAction'
 
@@ -22,7 +24,7 @@ const App = () => {
     useEffect(() => {
         dispatch(fetchRecords())
         dispatch(fetchDate())
-    })
+    }, [])
 
 
 
@@ -31,7 +33,7 @@ const App = () => {
 
 		<Aside />
 
-		<div className="content__overflow"></div>
+		<Backdrop />
 
 		<main className="content__main-main main-main">
             <div className="main-main__container container">

@@ -1,9 +1,8 @@
 import React from 'react'
-import CardStaff from '../CardStaff'
 
 
 
-const CardInfo = () => {
+const CardInfo = ({ icon, title, content }) => {
 
 
 
@@ -11,27 +10,15 @@ const CardInfo = () => {
         
         <a href="#" className="electronic-card__card-info card-info">
             <div className="card-info__img">
-                <svg width="50" height="50" role="img" >
-                    <use xlinkHref="img/sprite.svg#icon-info"/>
-                </svg>
+                { icon }
             </div>
 
             <div className="card-info__wrapper">
                 <h2 className="card-info__title title">
-                    Информация о пациенте
+                   { title }
                 </h2>
 
-                <ul className="card-info__dots-alist dots-alist">
-                    <li className="dots-alist__item">
-                        Ваши личные данные
-                    </li>
-                    <li className="dots-alist__item">
-                        Рекомендации врачей
-                    </li>
-                    <li className="dots-alist__item">
-                        История болезней
-                    </li>
-                </ul>
+                { content }
             </div>
         </a>
 

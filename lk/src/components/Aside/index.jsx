@@ -3,6 +3,11 @@ import Navigation from './Navigation'
 import Button from '../UI/Button'
 import img from '../../img/appvelox.png'
 import Logo from '../UI/Logo'
+import { useSelector } from 'react-redux'
+import classNames from 'classnames'
+import { useDispatch } from 'react-redux'
+import { burgerOpen } from '../../redux/actions/burder'
+
 
 
 
@@ -81,15 +86,21 @@ const url = ['/', '/doctors', '/message', 'testing', 'think']
 const url2 = ['/help', '/']
 
 const Aside = () => {
+    const dispatch = useDispatch();
     const [activeItemMenu, setActiveItemMenu] = useState(1)
 
     const clinkNavItemHandler = id => {
         setActiveItemMenu(id)
+        dispatch(burgerOpen())
     }
 
+    const state = useSelector(state => state)
 
     return(
-        <aside className="content__main-aside main-aside">
+            <aside className={classNames(
+                    {"translateX": state.burger.open}, "content__main-aside", "main-aside"
+                )}>
+
 			<div className="main-aside__wrapper">
 				<Logo>Логотип</Logo>
 

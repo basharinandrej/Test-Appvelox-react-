@@ -1,9 +1,6 @@
 import React, { Fragment } from 'react'
 
 
-import Button from '../../components/UI/Button'
-import { Link } from 'react-router-dom'
-
 const PagePlug = () => {
 
     return(
@@ -12,11 +9,6 @@ const PagePlug = () => {
                 Раздел находится в разработке
             </h1>
             
-            <Link to="/">
-                <Button classElement="main-plug__">
-                    Вернуться позже
-                </Button>
-            </Link>
         </div>
     )
 }

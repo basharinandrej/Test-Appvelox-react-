@@ -1,6 +1,11 @@
 import React from 'react'
 import Burger from '../UI/Burger/index'
 import img from '../../img/avatar.jpg'
+import { useDispatch } from 'react-redux'
+import { burgerOpen } from '../../redux/actions/burder'
+
+
+
 
 const arrIcons = [
     <svg width="18" height="18">
@@ -45,12 +50,19 @@ const arrIcons = [
 
 
 const Header = () => {
+    const dispatch = useDispatch();
 
+
+    const burgerClickHandler = () => {
+        dispatch(burgerOpen())
+    }
 
 
     return(
         <header className="main-main__main-head main-head">
-            <Burger />
+            <Burger 
+                onClick={burgerClickHandler}
+            />
 
             <h1 className="main-head__title title">
                 Мой профиль

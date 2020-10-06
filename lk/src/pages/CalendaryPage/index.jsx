@@ -1,11 +1,15 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
 
 
 import Calendary from '../../components/Calendary/index'
 import CardStaff from '../../components/CardStaff'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+
+
+import { removeAction } from '../../redux/actions/records'
+import { cntAction } from '../../redux/actions/cnt'
+
 
 
 const arrow =   <svg width="18" height="18">
@@ -20,10 +24,24 @@ const arrow =   <svg width="18" height="18">
                 </svg>
 
 
-const CalendaryPage = () => {
+const CalendaryPage = ( ) => {
+    const dispatch = useDispatch()
     
-    const records = useSelector(({ records }) => records.records);
 
+    const records = useSelector(({ records }) => records.records);
+    const state = useSelector(state => state)
+    
+
+
+
+    const recordCancelHandler = id => {
+        if ( window.confirm('Вы действительно хотите отменить запись к этому врачу') ) {
+            dispatch(removeAction(id))
+            dispatch(cntAction())
+        }
+    }
+
+    
 
 
 
@@ -44,9 +62,13 @@ const CalendaryPage = () => {
             
             <div className="reception__box">
                 <div className="reception__wrapper reception__wrapper--column reception__wrapper--scroll">
-                    { records && records.map((item, index)=> {
-                        return <CardStaff key={item + index} {...item}/>
-                    })}
+                    { state.cnt.cnt != 0 ? records && records.map((item, index)=> {
+                        return <CardStaff 
+                                    key={item + index} 
+                                    {...item} 
+                                    onClick={recordCancelHandler}
+                                />
+                    }) : <h4>ВЫ НЕ ЗАПИСАНЫ НИ К ОДНОМУ ВРАЧУ</h4>}
                 </div>
 
                 <Calendary />

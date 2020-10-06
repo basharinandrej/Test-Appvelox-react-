@@ -22,6 +22,7 @@ a {
     display: block;
     text-decoration: none;
     border: transparent;
+    cursor: pointer;
 }
 
 .main-btn:hover {
@@ -280,6 +281,17 @@ h3.title {
 .reception__card-staff:last-child{
     margin-right: 0;
 }
+
+.reception__block {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.reception__block .reception__card-staff:nth-child(n + 3) {
+    display: none;
+}
+
 .info-person__avatar {
     width: 60px;
     height: 60px;
@@ -628,6 +640,9 @@ h3.title {
     background: #fff;
 }
 
+.calendary-head__link {
+    cursor: pointer;
+}
 /* calendary end */
 
 
