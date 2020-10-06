@@ -10,7 +10,8 @@ import Header from './components/Header';
 import MyProfile from './pages/MyProfilePage'
 import CalendaryPage from './pages/CalendaryPage'
 import PagePlug from './pages/pagePlug'
-import {fetchRecords} from './redux/actions/records'
+import { fetchRecords } from './redux/actions/records'
+import { fetchDate } from './redux/actions/dateAction'
 
 
 
@@ -20,6 +21,7 @@ const App = () => {
 
     useEffect(() => {
         dispatch(fetchRecords())
+        dispatch(fetchDate())
     })
 
 

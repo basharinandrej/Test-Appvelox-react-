@@ -1,15 +1,32 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+
+
 import WeekDays from './WeekDays'
 import {calendary as coreCalendary} from './coreCalendary/index'
+import { sortArrAction } from '../../redux/actions/dateAction'
+
+
 
 
 // API My Calendary
 const maxYear = 2022
 const calendary = coreCalendary(maxYear)
 
+
+
 const Calendary = () => {
-    const [currentMonth, toggleMounth] = useState(9)
+    const dispatch = useDispatch();
+    const [currentMonth, toggleMounth] = useState(5)
     const [currentYear, toggleYear] = useState(0)
+    
+    let data = useSelector(({ date }) => date);
+       
+    
+    
+    let sortArr = data.month || [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1]   
+
 
     const nextMontsHandler = () => {
         if (currentYear >= maxYear - 2020) {
@@ -19,6 +36,11 @@ const Calendary = () => {
             toggleMounth( 0 )
         } else {
             toggleMounth( currentMonth + 1 )
+        }
+
+        
+        if (data.date != undefined) {
+            dispatch(sortArrAction(data, calendary, currentMonth + 1, currentYear))
         }
     }
 
@@ -32,77 +54,168 @@ const Calendary = () => {
             toggleMounth( currentMonth - 1 )
         }
 
+        if (data.date != undefined) {
+            dispatch(sortArrAction(data, calendary, currentMonth - 1, currentYear))
+        }
     }
+
+
+    
+
+    
+    
+    
+
+  
+
+    
+    
+
+    
+    
+    
+
 
 
     const renderDaysHandler = () => {
         // TODO сократить if'ы
 
+        const clnArrFunction = (currentYear, currentMonth) => {
+            let clnArr = calendary[currentYear].months[currentMonth].days.filter(el => el != '')
+            return clnArr
+        }
+
+        // Если первый день месяца понедельник, то мы не смещаем дни в массиве
         if (calendary[currentYear].months[currentMonth].dayWeek[0] === 'Пн') {
 
-            let clnArr = calendary[0].months[currentMonth].days.filter(el => el != '')
+            let clnArr = clnArrFunction(currentYear, currentMonth)
             clnArr.unshift()
 
+
             return clnArr.map((day, index)=> {
-                return <p key={day+index}>{day}</p>
+                return <p key={day+index}>
+                            {day}
+                            {
+                                day ? <span className={`table-days__count table-days__count${-sortArr[day]}`}>
+                                    { sortArr[day] }
+                                </span> : null  
+                            }
+                        </p>
             })
 
         } else if(calendary[currentYear].months[currentMonth].dayWeek[0] === 'Вт') {
 
-            let clnArr = calendary[currentYear].months[currentMonth].days.filter(el => el != '')
+            let clnArr = clnArrFunction(currentYear, currentMonth)
             clnArr.unshift('')
 
             return clnArr.map((day, index)=> {
-                return <p key={day+index}>{day}</p>
+                return <p key={day + index}>
+                            {day}  
+                            {
+                                day ? <span className={`table-days__count table-days__count${-sortArr[day]}`}>
+                                    { sortArr[day] }
+                                </span> : null  
+                            } 
+                        </p>
             })
+
 
         } else if(calendary[currentYear].months[currentMonth].dayWeek[0] === 'Ср') {
 
-            let clnArr = calendary[currentYear].months[currentMonth].days.filter(el => el != '')
+            let clnArr = clnArrFunction(currentYear, currentMonth)
             clnArr.unshift('', '')
+            
 
             return clnArr.map((day, index)=> {
-                return <p key={day+index}>{day}</p>
+                return <p key={day+index}>
+                            {day}
+                            {
+                                day ? <span className={`table-days__count table-days__count${-sortArr[day]}`}>
+                                    { sortArr[day] }
+                                </span> : null  
+                            }   
+                        </p>
             })
 
         } else if(calendary[currentYear].months[currentMonth].dayWeek[0] === 'Чт') {
 
-            let clnArr = calendary[currentYear].months[currentMonth].days.filter(el => el != '')
+            let clnArr = clnArrFunction(currentYear, currentMonth)
             clnArr.unshift('', '', '')
 
             return clnArr.map((day, index)=> {
-                return <p key={day+index}>{day}</p>
+                return <p key={day+index}>
+                            {day}
+                            {
+                                day ? <span className={`table-days__count table-days__count${-sortArr[day]}`}>
+                                    { sortArr[day] }
+                                </span> : null  
+                            }  
+                        </p>
             })
 
         } else if(calendary[currentYear].months[currentMonth].dayWeek[0] === 'Пт') {
 
-            let clnArr = calendary[currentYear].months[currentMonth].days.filter(el => el != '')
+            let clnArr = clnArrFunction(currentYear, currentMonth)
             clnArr.unshift('', '', '', '')
 
             return clnArr.map((day, index)=> {
-                return <p key={day+index}>{day}</p>
+                return <p key={day+index}>
+                            {day}
+                            {
+                                day ? <span className={`table-days__count table-days__count${-sortArr[day]}`}>
+                                    { sortArr[day] }
+                                </span> : null  
+                            }    
+                        </p>
             })
 
         } else if(calendary[currentYear].months[currentMonth].dayWeek[0] === 'Сб') {
 
-            let clnArr = calendary[currentYear].months[currentMonth].days.filter(el => el != '')
+            let clnArr = clnArrFunction(currentYear, currentMonth)
             clnArr.unshift('', '', '', '', '')
 
+
+
             return clnArr.map((day, index)=> {
-                return <p key={day+index}>{day}</p>
+                return <p key={day+index}>
+                            {day}
+                            {
+                                day ? <span className={`table-days__count table-days__count${-sortArr[day]}`}>
+                                    { sortArr[day] }
+                                </span> : null  
+                            }
+                        </p>
             })
 
         } else if(calendary[currentYear].months[currentMonth].dayWeek[0] === 'Вс') {
 
-            let clnArr = calendary[currentYear].months[currentMonth].days.filter(el => el != '')
+            let clnArr = clnArrFunction(currentYear, currentMonth)
             clnArr.unshift('', '', '', '', '', '')
 
             return clnArr.map((day, index)=> {
-                return <p key={day+index}>{day}</p>
+                return <p key={day+index}>
+                            {day}
+                            {
+                                day ? <span className={`table-days__count table-days__count${-sortArr[day]}`}>
+                                    { sortArr[day] }
+                                </span> : null  
+                            }    
+                        </p>
             })
         }
     }
     
+
+
+
+
+
+
+
+
+
+
+
 
     return(
         <div className="reception__calendary calendary">

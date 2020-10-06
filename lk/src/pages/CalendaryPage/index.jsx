@@ -1,9 +1,12 @@
 import React from 'react'
+
+
+
 import Calendary from '../../components/Calendary/index'
 import CardStaff from '../../components/CardStaff'
-
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+
 
 const arrow =   <svg width="18" height="18">
                     <g clipPath="url(#clip0)">
@@ -18,10 +21,12 @@ const arrow =   <svg width="18" height="18">
 
 
 const CalendaryPage = () => {
-    const records = useSelector(({records}) => records.records);
-
-
     
+    const records = useSelector(({ records }) => records.records);
+
+
+
+
     return(
         <section className="main-main__reception reception">
             <div className="reception__wrapper-breadcrumbs">

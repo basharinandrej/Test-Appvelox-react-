@@ -581,7 +581,7 @@ h3.title {
 
 .table-days {
     display: grid;
-    grid-template-rows: repeat(5, 63px);
+    grid-template-rows: repeat(6, 63px);
     grid-template-columns: repeat(7, 79px);
     padding: 0 12px;
 }
@@ -614,6 +614,14 @@ h3.title {
     justify-content: center;
     bottom: 12px;
     right: 12px;
+}
+
+.table-days__count1 {
+    display: none;
+}
+
+.table-days__countNaN {
+    display: none;
 }
 
 .table-days__paragraph--background {

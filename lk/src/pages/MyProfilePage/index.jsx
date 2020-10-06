@@ -37,10 +37,8 @@ const MyProfilePage = () => {
                     }
                     
 
-                    
-
                     <Link to="/calendary" className="reception__details">
-                            Еще 3 записи
+                            Еще {records && records.length - 2} записи
                             <span>Подробнее</span>
                     </Link>
                 </div>

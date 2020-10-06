@@ -2,36 +2,51 @@
     "records": [
         {
             "id": 0,
-            "imageUrl": "https://svyatogorsk.com/upload/000/u1/58/c5/4c4619be.jpg",
+            "imageUrl": "https://s.pfst.net/2010.05/16332634365367fd1777ea4040bee9fb41e4e5d092_b.jpg",
             "name": "Малушко Т. Н.",
             "post": "Хирургия",
             "date": "Понедельник 15.06.20",
             "time": "15:30",
             "address": "пр. Солидарности, д. 1, к. 1, лит. А",
             "organization": "СПБ ГБУЗ \"Городская поликлиника №25\"",
-            "isArchive": false
+            "isArchive": false,
+            "record": {
+                "year": 2020,
+                "month": "Июнь",
+                "day": 11
+            }
         },
         {
             "id": 1,
-            "imageUrl": "https://svyatogorsk.com/upload/000/u1/58/c5/4c4619be.jpg",
+            "imageUrl": "https://nikfoto.ru/files/images/2016/web%20vrach/IMG_2554.jpg",
             "name": "Харьков В. С.",
             "post": "Терапевтическое отделение",
             "date": "Понедельник 15.06.20",
             "time": "18:30",
             "address": "пр. Солидарности, д. 1, к. 1, лит. А",
             "organization": "СПБ ГБУЗ \"Городская поликлиника №25\"",
-            "isArchive": false
+            "isArchive": false,
+            "record": {
+                "year": 2020,
+                "month": "Июнь",
+                "day": 12
+            }
         },
         {
             "id": 2,
-            "imageUrl": "https://svyatogorsk.com/upload/000/u1/58/c5/4c4619be.jpg",
+            "imageUrl": "https://s.pfst.net/2010.05/16332634365367fd1777ea4040bee9fb41e4e5d092_b.jpg",
             "name": "Малушко Т. Н.",
             "post": "Хирургия",
             "date": "Вторник 30.06.20",
             "time": "12:10",
             "address": "пр. Солидарности, д. 1, к. 1, лит. А",
             "organization": "СПБ ГБУЗ \"Городская поликлиника №25\"",
-            "isArchive": false
+            "isArchive": false,
+            "record": {
+                "year": 2020,
+                "month": "Июнь",
+                "day": 13
+            }
         },
         {
             "id": 3,
@@ -42,7 +57,49 @@
             "time": "15:30",
             "address": "пр. Солидарности, д. 1, к. 1, лит. А",
             "organization": "СПБ ГБУЗ \"Городская поликлиника №25\"",
-            "isArchive": false
+            "isArchive": false,
+            "record": {
+                "year": 2020,
+                "month": "Июнь",
+                "day": 14
+            }
+        },
+        {
+            "id": 4,
+            "imageUrl": "https://www.spike.ru/upload/iblock/a10/a10b2b94a3404da6e841dcfd044ee528.png",
+            "name": "Хаус М. Д.",
+            "post": "Терапевтическое отделение",
+            "date": "Среда 15.07.20",
+            "time": "13:30",
+            "address": "пр. Солидарности, д. 1, к. 1, лит. А",
+            "organization": "СПБ ГБУЗ \"Городская поликлиника №25\"",
+            "isArchive": false,
+            "record": {
+                "year": 2020,
+                "month": "Июль",
+                "day": 15
+            }
+        },
+        {
+            "id": 5,
+            "imageUrl": "https://img3.stockfresh.com/files/p/pressmaster/m/49/3946765_stock-photo-male-practitioner.jpg",
+            "name": "Петров С. Д.",
+            "post": "Терапевтическое отделение",
+            "date": "Понедельник 8.07.20",
+            "time": "13:30",
+            "address": "пр. Солидарности, д. 1, к. 1, лит. А",
+            "organization": "СПБ ГБУЗ \"Городская поликлиника №25\"",
+            "isArchive": false,
+            "record": {
+                "year": 2020,
+                "month": "Июль",
+                "day": 16
+            }
         }
+    ],
+    "dataRecords": [
+        ["Июнь", [{ "day": 15, "cnt": 1 }, { "day": 30, "cnt": 1 }], 2020 ],
+        ["Июль", [{ "day": 15, "cnt": 2 }, { "day": 8, "cnt": 2}], 2020 ]
     ]
 }
+
